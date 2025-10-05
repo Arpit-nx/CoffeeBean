@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoBean Cafe - Web3 Coffee Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-animation"></div>
+
+  <div class="entrance-overlay">
+    <div class="entrance-content">
+      <h1 class="entrance-title">CryptoBean Cafe</h1>
+      <p class="entrance-subtitle">Where Coffee Meets Blockchain</p>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <span class="coffee-icon">☕</span>
+        <span class="logo-text">CryptoBean</span>
+      </div>
+      <nav class="nav">
+        <button id="connectButton" class="btn btn-connect">
+          <span class="btn-icon">🔗</span>
+          Connect Wallet
+        </button>
+        <button id="disconnectButton" class="btn btn-disconnect" style="display: none;">
+          <span class="btn-icon">🔓</span>
+          Disconnect
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="profile-section" id="profileSection" style="display: none;">
+        <div class="profile-card">
+          <div class="profile-avatar">
+            <span class="avatar-icon">👤</span>
+          </div>
+          <div class="profile-info">
+            <p class="profile-label">Connected Wallet</p>
+            <p class="profile-address" id="walletAddress">0x000...000</p>
+          </div>
+          <button id="balanceButton" class="btn btn-balance">
+            <span class="btn-icon">💰</span>
+            Show Balance
+          </button>
+          <div class="balance-display" id="balanceDisplay" style="display: none;">
+            <p class="balance-amount" id="balanceAmount">0 ETH</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero">
+        <h1 class="hero-title">Premium Coffee, Powered by Web3</h1>
+        <p class="hero-subtitle">Buy your favorite coffee with cryptocurrency</p>
+      </section>
+
+      <section class="menu-section">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="menu-grid" id="menuGrid">
+          <!-- Menu items will be dynamically generated -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="transaction-modal" id="transactionModal">
+    <div class="modal-content">
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-message" id="modalMessage"></p>
+      <button class="btn btn-modal-close" id="modalClose">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
