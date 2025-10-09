@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
   <div class="background-animation"></div>
@@ -58,9 +59,66 @@
         </div>
       </section>
 
+      <!-- Contract Interaction Section -->
+      <section class="contract-section" id="contractSection" style="display: none;">
+        <h2>📦 Storage Factory Contract</h2>
+        <div class="contract-interface">
+          <div class="contract-action">
+            <h3>Create New Storage</h3>
+            <p class="contract-description">Deploy a new SimpleStorage contract to the blockchain</p>
+            <button id="createStorageBtn" class="btn btn-contract">
+              <span class="btn-icon">🆕</span>
+              Create Storage Contract
+            </button>
+          </div>
+          
+          <div class="contract-action">
+            <h3>Read & Write Values</h3>
+            <p class="contract-description">Interact with your storage contracts</p>
+            <div class="input-group">
+              <input type="number" id="valueIndex" placeholder="Storage Index (0)" value="0" min="0">
+              <input type="number" id="newValue" placeholder="New Value to Store">
+            </div>
+            <div class="button-group">
+              <button id="getValueBtn" class="btn btn-contract">
+                <span class="btn-icon">📖</span>
+                Read Value
+              </button>
+              <button id="setValueBtn" class="btn btn-contract">
+                <span class="btn-icon">💾</span>
+                Set Value
+              </button>
+            </div>
+            <div class="value-display" id="storedValueDisplay">
+              Stored Value: <span id="storedValue">-</span>
+            </div>
+          </div>
+
+          <!-- Update the contract info section -->
+          <div class="contract-action">
+            <h3>Contract Info</h3>
+            <p class="contract-description">StorageFactory Contract Details</p>
+            <div class="contract-info">
+              <div class="info-item">
+                <span class="info-label">Contract Address:</span>
+                <span class="info-value">0xDa87801852A772459f27e235a2d7f81eb146fa78</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Network:</span>
+                <span class="info-value">Ethereum Sepolia</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Available Indexes:</span>
+                <span class="info-value" id="availableIndexes">0 (create first)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="hero">
         <h1 class="hero-title">Premium Coffee, Powered by Web3</h1>
-        <p class="hero-subtitle">Buy your favorite coffee with cryptocurrency</p>
+        <p class="hero-subtitle">Buy your favorite coffee with cryptocurrency and interact with smart contracts</p>
       </section>
 
       <section class="menu-section">
