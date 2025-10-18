@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# ☕ CoffeeBean — Your First Step into Web3!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://github.com/Arpit-nx/CoffeeBean/assets/placeholder-coffee-banner.png" alt="CoffeeBean Banner" width="80%">
+</p>
 
-## Available Scripts
+<p align="center">
+  <b>☕ A decentralized app (DApp) built on Ethereum that lets users buy me a coffee using crypto!</b>  
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://soliditylang.org/"><img src="https://img.shields.io/badge/Solidity-^0.8.0-black?logo=solidity&logoColor=white" /></a>
+  <a href="https://ethereum.org/"><img src="https://img.shields.io/badge/Ethereum-Mainnet-blue?logo=ethereum" /></a>
+  <a href="https://metamask.io/"><img src="https://img.shields.io/badge/Metamask-Enabled-orange?logo=metamask" /></a>
+  <a href="https://hardhat.org/"><img src="https://img.shields.io/badge/Built%20With-Hardhat-yellow" /></a>
+</p>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🌟 Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**CoffeeBean** is a fun and simple **Web3 DApp** that allows anyone to send you a “coffee” ☕ — a small Ethereum tip — as a token of appreciation.  
+It’s built using **Solidity**, **Hardhat**, and **Ethers.js**, and deployed on an Ethereum test network.
 
-### `npm test`
+The project is designed to be a **hands-on introduction to smart contracts**, **blockchain payments**, and **decentralized app development**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer | Technology Used |
+|-------|------------------|
+| **Smart Contract** | Solidity |
+| **Blockchain Network** | Ethereum / Sepolia Testnet |
+| **Framework** | Hardhat |
+| **Frontend** | HTML, CSS, JavaScript (Ethers.js) |
+| **Wallet** | MetaMask |
+| **Deployment** | GitHub + Hardhat Local/Testnet |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Features
 
-### `npm run eject`
+✅ Send ETH as a “Coffee” (tip) directly on-chain  
+✅ Transparent transaction records  
+✅ Wallet connection via MetaMask  
+✅ Smart contract built with Solidity  
+✅ Easy-to-understand codebase — perfect for beginners  
+✅ Deployed and verified on testnet  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📸 Preview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="center">
+  <img src="https://github.com/Arpit-nx/CoffeeBean/assets/placeholder-coffee-ui.png" alt="CoffeeBean Screenshot" width="80%">
+</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧩 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CoffeeBean/
+│
+├── contracts/ # Solidity/Vyper smart contracts
+│ └── Coffee.sol
+│
+├── scripts/ # Deployment & interaction scripts
+│ └── deploy.js
+│
+├── frontend/ # Simple HTML + JS UI
+│ ├── index.html
+│ └── app.js
+│
+├── hardhat.config.js # Hardhat setup
+└── README.md
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🧠 Smart Contract Logic
 
-### Analyzing the Bundle Size
+The contract allows users to send a tip (in ETH) with a name and message.  
+Each transaction stores:
+- Sender’s address  
+- Name & message  
+- Timestamp  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```solidity
+function buyCoffee(string memory _name, string memory _message) public payable {
+    require(msg.value > 0, "Can't buy coffee for free!");
+    memos.push(Memo(msg.sender, block.timestamp, _name, _message));
+}
