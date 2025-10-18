@@ -17,7 +17,7 @@ export class StorageFactoryService {
     this.provider = new ethers.BrowserProvider(window.ethereum);
     this.signer = await this.provider.getSigner();
     
-    const factoryAddress = '0x3B750d93970f42b6D08d6e8Ea7544Fb536C9927b';
+    const factoryAddress = '0xE886bBE835a83FAA675E52533116888dd993F236';
     this.contract = new ethers.Contract(factoryAddress, factoryJson.abi, this.signer);
   }
 
