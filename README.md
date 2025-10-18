@@ -53,8 +53,8 @@ The project is designed to be a **hands-on introduction to smart contracts**, **
 ## 📸 Preview
 
 <p align="center">
-  <img src="https://github.com/Arpit-nx/CoffeeBean/assets/placeholder-coffee-banner.png" alt="CoffeeBean Screenshot" width="80%">
-  <img src="https://github.com/Arpit-nx/CoffeeBean/assets/deployment.png" alt="Deployment Screenshot" width="80%">
+<img width="1919" height="1006" alt="Screenshot 2025-10-18 123203" src="https://github.com/user-attachments/assets/a6a1f40e-2312-4309-b3fd-6c6324912dcd" />
+<img width="1194" height="868" alt="Screenshot 2025-10-18 122724" src="https://github.com/user-attachments/assets/c44b8837-9651-472e-beb8-d87d70166499" />
 </p>
 
 ---
